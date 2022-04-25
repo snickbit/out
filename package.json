@@ -3,6 +3,9 @@
 	"description": "Cross-platform pretty output for your terminal or browser console.",
 	"version": "2.0.5",
 	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
