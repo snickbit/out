@@ -29,7 +29,7 @@
 		"prod": "yarn build --minify",
 		"watch": "yarn build --watch",
 		"docs": "typedoc",
-		"release": "release-it"
+		"release": "release-it --ci"
 	},
 	"dependencies": {
 		"@snickbit/cycle": "^0.0.4",
