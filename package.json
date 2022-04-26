@@ -3,10 +3,6 @@
 	"description": "Cross-platform pretty output for your terminal or browser console.",
 	"version": "2.0.11",
 	"license": "MIT",
-	"publishConfig": {
-		"registry": "https://registry.npmjs.org/",
-		"access": "public"
-	},
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
@@ -30,6 +26,7 @@
 		"prod": "yarn build --minify",
 		"watch": "yarn build --watch",
 		"docs": "typedoc",
+		"depcheck": "depcheck",
 		"release": "release-it --ci"
 	},
 	"dependencies": {
