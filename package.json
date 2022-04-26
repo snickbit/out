@@ -1,7 +1,7 @@
 {
 	"name": "@snickbit/out",
 	"description": "Cross-platform pretty output for your terminal or browser console.",
-	"version": "2.0.8",
+	"version": "2.0.9",
 	"license": "MIT",
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org/",
