@@ -26,11 +26,13 @@ export type OutState = {
 	case: CaseType
 	[key: string]: any
 }
+
 export type OutPersistent = {
 	name: string
 	prefix: OutPersistentPrefix
 	verbosity: number
 }
+
 export type OutPersistentPrefix = {
 	color: string
 	text: string
@@ -178,7 +180,9 @@ export const styles: Record<string, Partial<OutStyle>> = {
 	}
 }
 
-export type OutModifier = any | ((out: Out) => Out)
+export type OutModifierMethod = (out: Out) => Out
+
+export type OutModifier = any | OutModifierMethod
 
 export const modifiers: Record<string, OutModifier> = {
 	exit: true,

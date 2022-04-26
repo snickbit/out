@@ -19,6 +19,7 @@ export const terminalWidth = () => (isNode && process.stdout.isTTY ? process.std
 /**
  * Noop function
  */
+/* eslint @typescript-eslint/no-empty-function: off */
 export const noop = () => {
 }
 
@@ -34,7 +35,7 @@ export function example() {
 	out.write('out.write()', 'with different', {message: 'Variable', value: 'types'})
 
 	out.ln('Here are all of the styles you can use:')
-	for (let [name, style] of Object.entries(styles)) {
+	for (const [name, style] of Object.entries(styles)) {
 		const styleVerbosity = style.verbosity > 0 ? style.verbosity : style.verbosity < 0 ? 'forced' : 0
 		out.force.noExit[name](`out.${name}(verbosity: ${styleVerbosity})`)
 	}

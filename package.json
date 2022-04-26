@@ -1,7 +1,7 @@
 {
 	"name": "@snickbit/out",
 	"description": "Cross-platform pretty output for your terminal or browser console.",
-	"version": "2.0.7",
+	"version": "2.0.8",
 	"license": "MIT",
 	"publishConfig": {
 		"access": "public"

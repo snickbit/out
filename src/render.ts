@@ -68,7 +68,7 @@ export const horizontalLine = (symbol: string, min?: number, max?: number): stri
  * @param {number} [padding=2]
  * @returns {string}
  */
-export function centerText(text: string, symbol: string = ' ', padding: number = 2) {
+export function centerText(text: string, symbol = ' ', padding = 2) {
 	const parts = text.split('\n')
 	const text_length = Math.max(
 		parts.reduce((a, b) => Math.max(a, stripAnsi(b).length), 0),

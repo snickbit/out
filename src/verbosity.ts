@@ -53,7 +53,7 @@ export function processVerbosity() {
 
 	if (app_values) {
 		const apps = app_values.split(',')
-		for (let app of apps) {
+		for (const app of apps) {
 			const [name, level] = app.split(':')
 			verbosity.apps[name] = Math.max(verbosity.apps[name] ?? 0, parse(level))
 		}
@@ -104,8 +104,8 @@ export function getVerbosity(app = null) {
 	if (!app || verbosity.apps['*']) {
 		return verbosity.global || 0
 	} else {
-		let matches = []
-		for (let v_app in verbosity.apps) {
+		const matches = []
+		for (const v_app in verbosity.apps) {
 			if (picomatch(v_app)(app)) {
 				matches.push(verbosity.apps[v_app])
 			}
