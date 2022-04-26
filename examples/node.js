@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const {out} = require('../dist')
 const {styles} = require('../src/config')
 
