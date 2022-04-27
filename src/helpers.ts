@@ -2,8 +2,7 @@ import {isNode} from 'browser-or-node'
 import {defaultWidth, styles} from './config'
 import {out} from './index'
 
-/**
- */
+/** @internal */
 export const lineWidth = (min?: number, max?: number): number => {
 	max = max ? Math.min(max, terminalWidth()) : terminalWidth()
 	min = min ?? 0
@@ -12,17 +11,21 @@ export const lineWidth = (min?: number, max?: number): number => {
 
 /**
  * Determine the width of the terminal
+ * @internal
  * @returns {number|number}
  */
 export const terminalWidth = () => (isNode && process.stdout.isTTY ? process.stdout.columns : defaultWidth) || defaultWidth
 
 /**
  * Noop function
+ * @internal
  */
 /* eslint @typescript-eslint/no-empty-function: off */
 export const noop = () => {
 }
 
+
+/** @internal */
 export function example() {
 	out.block.write('Note: Verbosity detection is disabled for this example.')
 
