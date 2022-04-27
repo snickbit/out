@@ -22,9 +22,9 @@
 		"clean": "shx rm -rf ./dist",
 		"test": "jest",
 		"build": "tsup",
-		"build:meta": "yarn build --metafile",
-		"prod": "yarn build --minify",
-		"watch": "yarn build --watch",
+		"build:meta": "yarpm build --metafile",
+		"prod": "yarpm build --minify",
+		"watch": "yarpm build --watch",
 		"docs": "typedoc",
 		"depcheck": "depcheck",
 		"release": "release-it --ci"
