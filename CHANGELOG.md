@@ -1,5 +1,13 @@
 # @snickbit/out
 
+## 2.0.17
+
+### Patch Changes
+
+- [5f61620](https://github.com/snickbit/out/commit/5f61620) **chore**:  update build config
+- [42d0990](https://github.com/snickbit/out/commit/42d0990) **chore**:  update build config
+
+
 ## 2.0.2
 
 ### Patch Changes
