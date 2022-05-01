@@ -29,14 +29,13 @@
 		"depcheck": "depcheck"
 	},
 	"dependencies": {
+		"@snickbit/ansi": "^0.0.1",
 		"@snickbit/cycle": "^0.0.14",
-		"@snickbit/utilities": "^3.0.4",
+		"@snickbit/utilities": "^3.0.14",
 		"ansi-styles-template": "^1.0.0",
 		"browser-or-node": "^2.0.0",
-		"chalk": "^4.1.2",
 		"node-inspect-extracted": "^1.1.0",
-		"picomatch-browser": "^2.2.6",
-		"strip-ansi": "^6.0.1"
+		"picomatch-browser": "^2.2.6"
 	},
 	"devDependencies": {
 		"@types/jest": "^27.4.1",
@@ -47,7 +46,7 @@
 		"typedoc": "^0.22.15",
 		"typedoc-plugin-markdown": "^3.12.0",
 		"typedoc-plugin-no-inherit": "^1.3.1",
-		"typescript": "^4.6.3"
+		"typescript": "^4.6.4"
 	},
 	"jest": {
 		"preset": "ts-jest",

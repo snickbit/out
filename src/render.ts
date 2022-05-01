@@ -1,13 +1,8 @@
 import {isBrowser} from 'browser-or-node'
-import chalk from 'chalk'
 import {inspect} from 'node-inspect-extracted'
-import stripAnsi from 'strip-ansi'
+import {stripAnsi} from '@snickbit/ansi'
 import {default_inspection_options} from './config'
 import {lineWidth, terminalWidth} from './helpers'
-
-if (isBrowser) {
-	chalk.level = 1
-}
 
 /**
  * @param {string} text - The text to format

@@ -5,8 +5,7 @@ import {_console, CaseType, colorCycle, defaultState, modifiers, OutModifierMeth
 import {_inspect, centerText, formatCase, horizontalLine} from './render'
 import {getVerbosity, setVerbosity} from './verbosity'
 import {example, lineWidth, noop, terminalWidth} from './helpers'
-import chalk from 'chalk'
-import stripAnsi from 'strip-ansi'
+import {ansiStyles, stripAnsi} from '@snickbit/ansi'
 import {getLabel} from './icons'
 import {template} from 'ansi-styles-template'
 
@@ -295,15 +294,13 @@ export class Out extends Function {
 
 		/**
 		 * get colorize object
-		 * @returns {{text: chalk.Chalk, color: chalk.Chalk, prefix: chalk.Chalk}}
 		 */
 		const getColorize = () => {
-			const color = this.state.color || this.state.color
-			const colorNoop = string => string
+			const wrapColor = (hex: string, text: string) => ansiStyles.color.ansi256(ansiStyles.hexToAnsi256(hex)) + text + ansiStyles.color.close
 			return {
-				text: settings.textColor && this.state.color ? chalk.hex(this.state.color) : colorNoop,
-				color: color ? chalk.hex(color) : colorNoop,
-				prefix: this.persistent.prefix?.color ? chalk.hex(this.persistent.prefix.color) : colorNoop
+				text: (text) => settings.textColor && this.state.color ? wrapColor(this.state.color, text) : text,
+				color: (text) => this.state.color ? wrapColor(this.state.color, text) : text,
+				prefix: (text) => this.persistent.prefix?.color ? wrapColor(this.persistent.prefix.color, text) : text
 			}
 		}
 
@@ -395,7 +392,7 @@ export class Out extends Function {
 				_console.log('\n')
 			} else if (this.state.block || messages.heading) {
 				if (messages.heading) {
-					_console.log(colorize.color(centerText(chalk.bold(template(messages.heading)), '-')))
+					_console.log(colorize.color(centerText(template('{bold}' + messages.heading) + '{/bold}', '-')))
 				} else {
 					_console.log(colorize.color(horizontalLine('-', messages.length)))
 				}
