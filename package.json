@@ -29,7 +29,7 @@
 		"depcheck": "depcheck"
 	},
 	"dependencies": {
-		"@snickbit/ansi": "^0.0.0",
+		"@snickbit/ansi": "latest",
 		"@snickbit/cycle": "^0.0.14",
 		"@snickbit/utilities": "^3.0.14",
 		"ansi-styles-template": "^1.0.0",
