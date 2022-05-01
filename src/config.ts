@@ -8,7 +8,6 @@ export type OutState = {
 	force: boolean
 	dominant: boolean
 	color: string
-	accent: string
 	label: string
 	title: boolean
 	heading: string
@@ -67,18 +66,18 @@ export const colorCycle = new Cycle('hex')
 
 export type OutStyle = {
 	[key: string]: string | number | boolean
-	color: string
-	force: boolean
-	dominant: boolean
-	label: string
-	exit: boolean | number
-	broken: boolean
-	verbosity: number
-	title: boolean
-	block: boolean
-	throw: boolean
-	center: boolean
-	breadcrumbs: string
+	color?: string
+	force?: boolean
+	dominant?: boolean
+	label?: string
+	exit?: boolean | number
+	broken?: boolean
+	verbosity?: number
+	title?: boolean
+	block?: boolean
+	throw?: boolean
+	center?: boolean
+	breadcrumbs?: string
 }
 
 export interface OutStyles {
@@ -98,7 +97,7 @@ export interface OutStyles {
 	done: (...messages: any) => void
 }
 
-export const styles: Record<string, Partial<OutStyle>> = {
+export const styles: Record<string, OutStyle> = {
 	log: {
 		color: '#FFF',
 		label: 'log'
