@@ -14,27 +14,29 @@ const verbosity = {
  * @param {number} [level=1] - The level to check against
  * @returns {boolean}
  */
-export const isVerbose = (level = 1) => getVerbosity() >= level
+export const isVerbose = (level = 1): boolean => getVerbosity() >= level
 
 export function getArgVerbosity() {
 	let arg_verbosity
-	if (process.argv.length > 0) {
-		const verbose_args = process.argv.filter(arg => arg.startsWith('--verbose=') || arg.startsWith('-v') || arg.startsWith('--vo='))
-		if (verbose_args.length > 0) {
-			arg_verbosity = verbose_args.reduce((acc, arg) => {
-				if (arg.startsWith('--verbose=')) {
-					const [, value] = arg.split('=')
-					return parseInt(value)
-				} else if (arg.startsWith('--vo=')) {
-					const [, def] = arg.split('=')
-					const [app, value] = def.split(':')
-					verbosity.apps[app] = parseInt(value)
-					return acc
-				} else if (arg.startsWith('-v')) {
-					return acc + (arg.match(/v/g) || []).length
-				}
-				return acc + 1
-			}, 0)
+	if (isNode) {
+		if (process.argv.length > 0) {
+			const verbose_args = process.argv.filter(arg => arg.startsWith('--verbose=') || arg.startsWith('-v') || arg.startsWith('--vo='))
+			if (verbose_args.length > 0) {
+				arg_verbosity = verbose_args.reduce((acc, arg) => {
+					if (arg.startsWith('--verbose=')) {
+						const [, value] = arg.split('=')
+						return parseInt(value)
+					} else if (arg.startsWith('--vo=')) {
+						const [, def] = arg.split('=')
+						const [app, value] = def.split(':')
+						verbosity.apps[app] = parseInt(value)
+						return acc
+					} else if (arg.startsWith('-v')) {
+						return acc + (arg.match(/v/g) || []).length
+					}
+					return acc + 1
+				}, 0)
+			}
 		}
 	}
 	return arg_verbosity
@@ -93,10 +95,10 @@ export function setProcessVerbosity(value, app = null) {
 
 /**
  * Get and parse the verbosity from the CLI
- * @param {String} [app] - The name of the app to get the verbosity for
+ * @param {string} [app] - The name of the app to get the verbosity for
  * @returns {null|number}
  */
-export function getVerbosity(app = null) {
+export function getVerbosity(app: string = null) {
 	if (!verbosity.checked) {
 		processVerbosity()
 	}
@@ -116,8 +118,8 @@ export function getVerbosity(app = null) {
 
 /**
  * Temporarily set the verbosity
- * @param {Number} [level=0]
- * @param {String} [app]
+ * @param {number} [level=0]
+ * @param {string} [app]
  */
 export function setVerbosity(level = 0, app = null) {
 	if (app) {
