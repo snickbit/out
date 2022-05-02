@@ -80,4 +80,4 @@ In browsers, you just need to include it in your document somewhere and an insta
 
 Copyright (c) 2022 - **Nicholas Lowe** aka **Snickbit**
 
-[MIT License](https://github.com/snickbit/out/blob/master/LICENSE)
+[MIT License](https://github.com/snickbit/out/blob/main/LICENSE)
