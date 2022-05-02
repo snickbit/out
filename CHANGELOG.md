@@ -1,5 +1,15 @@
 # @snickbit/out
 
+## 2.0.19
+
+### Patch Changes
+
+- [1f1fc30](https://github.com/snickbit/out/commit/1f1fc30) **docs**:  update
+- [f33d421](https://github.com/snickbit/out/commit/f33d421) **docs**:  minor updates to jsdocs
+- [1285a31](https://github.com/snickbit/out/commit/1285a31) **chore**:  update dependencies
+- [d4f15e5](https://github.com/snickbit/out/commit/d4f15e5) **chore**:  update build config
+
+
 ## 2.0.18
 
 ### Patch Changes
