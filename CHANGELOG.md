@@ -1,5 +1,13 @@
 # @snickbit/out
 
+## 2.0.21
+
+### Patch Changes
+
+- [11c1bd3](https://github.com/snickbit/out/commit/11c1bd3) **build**:  migrate to nx
+- [320f364](https://github.com/snickbit/out/commit/320f364) **chore**:  update config chore: update dependencies
+
+
 ## 2.0.19
 
 ### Patch Changes
