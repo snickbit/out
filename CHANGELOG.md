@@ -1,5 +1,13 @@
 # @snickbit/out
 
+## 2.0.22
+
+### Patch Changes
+
+- [bc2296d](https://github.com/snickbit/out/commit/bc2296d) **chore**:  update dependencies
+- [49c9579](https://github.com/snickbit/out/commit/49c9579) **build**:  add dev watcher scripts with source maps
+
+
 ## 2.0.21
 
 ### Patch Changes
