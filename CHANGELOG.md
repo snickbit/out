@@ -1,5 +1,13 @@
 # @snickbit/out
 
+## 2.0.23
+
+### Patch Changes
+
+- [3458add](https://github.com/snickbit/out/commit/3458add) **chore**(dep):  update dependencies
+- [62fb3ef](https://github.com/snickbit/out/commit/62fb3ef) **style**:  reformat
+
+
 ## 2.0.22
 
 ### Patch Changes

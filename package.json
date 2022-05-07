@@ -1,7 +1,7 @@
 {
 	"name": "@snickbit/out",
 	"description": "Cross-platform pretty output for your terminal or browser console.",
-	"version": "2.0.22",
+	"version": "2.0.23",
 	"license": "MIT",
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
@@ -31,7 +31,7 @@
 	},
 	"dependencies": {
 		"@snickbit/ansi": "latest",
-		"@snickbit/cycle": "^0.0.17",
+		"@snickbit/cycle": "^0.0.18",
 		"@snickbit/utilities": "^3.0.17",
 		"ansi-styles-template": "^1.0.0",
 		"browser-or-node": "^2.0.0",
