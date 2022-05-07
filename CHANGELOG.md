@@ -7,14 +7,12 @@
 - [bc2296d](https://github.com/snickbit/out/commit/bc2296d) **chore**:  update dependencies
 - [49c9579](https://github.com/snickbit/out/commit/49c9579) **build**:  add dev watcher scripts with source maps
 
-
 ## 2.0.21
 
 ### Patch Changes
 
 - [11c1bd3](https://github.com/snickbit/out/commit/11c1bd3) **build**:  migrate to nx
 - [320f364](https://github.com/snickbit/out/commit/320f364) **chore**:  update config chore: update dependencies
-
 
 ## 2.0.19
 
@@ -24,7 +22,6 @@
 - [f33d421](https://github.com/snickbit/out/commit/f33d421) **docs**:  minor updates to jsdocs
 - [1285a31](https://github.com/snickbit/out/commit/1285a31) **chore**:  update dependencies
 - [d4f15e5](https://github.com/snickbit/out/commit/d4f15e5) **chore**:  update build config
-
 
 ## 2.0.18
 
@@ -36,14 +33,12 @@
 - [49b8ca8](https://github.com/snickbit/out/commit/49b8ca8) **chore**:  adjust .gitignore
 - [27469a8](https://github.com/snickbit/out/commit/27469a8) **fix**:  minor type adjustments
 
-
 ## 2.0.17
 
 ### Patch Changes
 
 - [5f61620](https://github.com/snickbit/out/commit/5f61620) **chore**:  update build config
 - [42d0990](https://github.com/snickbit/out/commit/42d0990) **chore**:  update build config
-
 
 ## 2.0.2
 
