@@ -1,5 +1,13 @@
 # @snickbit/out
 
+## 2.0.25
+
+### Patch Changes
+
+- [cd7e765](https://github.com/snickbit/out/commit/cd7e765) **chore**(release):  publish
+- [82c4e5f](https://github.com/snickbit/out/commit/82c4e5f) **build**:  switch to pnpm for running
+- [57d1f53](https://github.com/snickbit/out/commit/57d1f53) **chore**:  sort package.json
+
 ## 2.0.24
 
 ### Patch Changes
