@@ -18,13 +18,13 @@
 		"build": "tsup",
 		"clean": "shx rm -rf ./dist",
 		"depcheck": "depcheck",
-		"dev": "npm run build -- --sourcemap",
+		"dev": "pnpm run build --sourcemap",
 		"docs": "typedoc",
-		"meta": "npm run prod -- --metafile",
-		"prod": "npm run build -- --minify",
+		"meta": "pnpm run prod --metafile",
+		"prod": "pnpm run build --minify",
 		"start": "node ./examples/node.js",
 		"test": "jest",
-		"watch": "npm run dev -- --watch"
+		"watch": "pnpm run dev --watch"
 	},
 	"jest": {
 		"preset": "ts-jest",
