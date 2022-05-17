@@ -1,12 +1,18 @@
 # @snickbit/out
 
+## 2.0.24
+
+### Patch Changes
+
+- [82c4e5f](https://github.com/snickbit/out/commit/82c4e5f) **build**:  switch to pnpm for running
+- [57d1f53](https://github.com/snickbit/out/commit/57d1f53) **chore**:  sort package.json
+
 ## 2.0.23
 
 ### Patch Changes
 
 - [3458add](https://github.com/snickbit/out/commit/3458add) **chore**(dep):  update dependencies
 - [62fb3ef](https://github.com/snickbit/out/commit/62fb3ef) **style**:  reformat
-
 
 ## 2.0.22
 
