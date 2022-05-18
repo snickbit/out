@@ -24,7 +24,6 @@ export const terminalWidth = () => (isNode && process.stdout.isTTY ? process.std
 export const noop = () => {
 }
 
-
 /** @internal */
 export function example() {
 	out.block.write('Note: Verbosity detection is disabled for this example.')
