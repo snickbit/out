@@ -1,5 +1,13 @@
 # @snickbit/out
 
+## 2.0.26
+
+### Patch Changes
+
+- [6acbba7](https://github.com/snickbit/out/commit/6acbba7) **fix**:  remove duplicate code
+- [9b69ac2](https://github.com/snickbit/out/commit/9b69ac2) **build**:  remove nx
+- [0b97df5](https://github.com/snickbit/out/commit/0b97df5) **style**:  relint
+
 ## 2.0.25
 
 ### Patch Changes
