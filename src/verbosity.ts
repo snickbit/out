@@ -69,8 +69,8 @@ export function processVerbosity() {
 
 function stringifyAppValues() {
 	return Object.keys(verbosity.apps)
-	.map(app => `${app}:${verbosity.apps[app]}`)
-	.join(',')
+		.map(app => `${app}:${verbosity.apps[app]}`)
+		.join(',')
 }
 
 export function setProcessVerbosity(value, app = null) {
@@ -105,15 +105,14 @@ export function getVerbosity(app: string = null) {
 
 	if (!app || verbosity.apps['*']) {
 		return verbosity.global || 0
-	} else {
-		const matches = []
-		for (const v_app in verbosity.apps) {
-			if (picomatch(v_app)(app)) {
-				matches.push(verbosity.apps[v_app])
-			}
-		}
-		return matches.length ? Math.max(...matches) : undefined
 	}
+	const matches = []
+	for (const v_app in verbosity.apps) {
+		if (picomatch(v_app)(app)) {
+			matches.push(verbosity.apps[v_app])
+		}
+	}
+	return matches.length ? Math.max(...matches) : undefined
 }
 
 /**

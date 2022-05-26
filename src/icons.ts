@@ -1,6 +1,6 @@
 import {isBrowser, isNode} from 'browser-or-node'
 
-const icons: { [key: string]: any } = {
+const icons: Record<string, any> = {
 	log: {
 		unicode: '>\ufe0f',
 		text: 'log'

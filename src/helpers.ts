@@ -56,7 +56,8 @@ export function example() {
 
 	out.ln('Go crazy with chaining....')
 	out.ln('>>> out.info("info").write("message").ln("Prints a line before the message").block.success("We did it!")')
-	out.info('info').write('message').ln('New Line').block.success('Success!')
+	out.info('info').write('message')
+		.ln('New Line').block.success('Success!')
 
 	out.ln('Special methods:')
 	out.prefix('out').write('out.prefix("out").write()')

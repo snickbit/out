@@ -2,7 +2,7 @@ import {Cycle} from '@snickbit/cycle'
 import {isBrowser} from 'browser-or-node'
 import {Out} from './Out'
 
-export type CaseType = 'symbol' | 'none' | 'title' | 'upper' | 'lower' | 'camel' | 'snake' | 'kebab' | 'sentence' | 'pascal' | 'constant' | 'slug'
+export type CaseType = 'camel' | 'constant' | 'kebab' | 'lower' | 'none' | 'pascal' | 'sentence' | 'slug' | 'snake' | 'symbol' | 'title' | 'upper'
 
 export type OutState = {
 	force: boolean
@@ -65,7 +65,7 @@ export const default_inspection_options = {
 export const colorCycle = new Cycle('hex')
 
 export type OutStyle = {
-	[key: string]: string | number | boolean
+	[key: string]: boolean | number | string
 	color?: string
 	force?: boolean
 	dominant?: boolean
@@ -181,11 +181,11 @@ export const styles: Record<string, OutStyle> = {
 
 export type OutModifierMethod = (out: Out) => Out
 
-export type OutModifier = any | OutModifierMethod
+export type OutModifier = OutModifierMethod | any
 
 export const modifiers: Record<string, OutModifier> = {
 	exit: true,
-	noExit: (out: Out) => {
+	noExit(out: Out) {
 		out.state.exit = undefined
 		out.lock('exit')
 		return out
@@ -193,13 +193,13 @@ export const modifiers: Record<string, OutModifier> = {
 	broken: true,
 	center: true,
 	title: true,
-	block: (out: Out) => {
+	block(out: Out) {
 		out.state.block = true
 		out.state.center = true
 		return out
 	},
 	force: true,
-	ln: (out: Out) => {
+	ln(out: Out) {
 		_console.log()
 		return out
 	}

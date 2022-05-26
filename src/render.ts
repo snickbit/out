@@ -1,6 +1,6 @@
+import {stripAnsi} from '@snickbit/ansi'
 import {isBrowser} from 'browser-or-node'
 import {inspect} from 'node-inspect-extracted'
-import {stripAnsi} from '@snickbit/ansi'
 import {default_inspection_options} from './config'
 import {lineWidth, terminalWidth} from './helpers'
 
@@ -29,9 +29,9 @@ export function formatCase(text, case_type) {
 			return text.charAt(0).toUpperCase() + text.slice(1)
 		case 'constant':
 			return text
-			.replace(/\s(.)/g, $1 => $1.toUpperCase())
-			.replace(/\s/g, '_')
-			.toUpperCase()
+				.replace(/\s(.)/g, $1 => $1.toUpperCase())
+				.replace(/\s/g, '_')
+				.toUpperCase()
 		case 'symbol':
 			return text.replace(/\s/g, '_').toUpperCase()
 		default:
@@ -45,7 +45,7 @@ export function formatCase(text, case_type) {
  * @param {object} [options]
  */
 export function _inspect(value, options = {}) {
-	return isBrowser ? value : inspect(value, {...default_inspection_options, ...(options || {})})
+	return isBrowser ? value : inspect(value, {...default_inspection_options, ...options || {}})
 }
 
 /**
@@ -62,11 +62,10 @@ export const horizontalLine = (symbol: string, min?: number, max?: number): stri
  */
 export function centerText(text: string, symbol = ' ', padding = 2) {
 	const parts = text.split('\n')
-	const text_length = Math.max(
-		parts.reduce((a, b) => Math.max(a, stripAnsi(b).length), 0),
-		1
-	)
+	const text_length = Math.max(parts.reduce((a, b) => Math.max(a, stripAnsi(b).length), 0),
+		1)
 	const pad_len = Math.max(Math.floor((terminalWidth() - text_length) / 2) - 2, 0)
 	const str_pad = (symbol || ' ').repeat(pad_len) + ' '.repeat(padding)
-	return parts.map(part => str_pad + part + str_pad.split('').reverse().join('')).join('\n')
+	return parts.map(part => str_pad + part + str_pad.split('').reverse()
+		.join('')).join('\n')
 }
