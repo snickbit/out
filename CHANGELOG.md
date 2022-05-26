@@ -1,5 +1,12 @@
 # @snickbit/out
 
+## 2.0.27
+
+### Patch Changes
+
+- [3a80f22](https://github.com/snickbit/out/commit/3a80f22) **style**:  heavy code restyling
+- [b89649c](https://github.com/snickbit/out/commit/b89649c) **chore**:  bump dependencies
+
 ## 2.0.26
 
 ### Patch Changes
