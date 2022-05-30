@@ -127,9 +127,9 @@ export interface Out extends Function {
 
 	(...messages: any[]): Out
 
-	apply: (this: Out, ...messages: any[]) => Out
+	apply(this: Out, ...messages: any[]): Out
 
-	call: (...messages: any[]) => Out
+	call(...messages: any[]): Out
 }
 
 type RenderData = {

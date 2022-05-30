@@ -19,9 +19,9 @@ export type OutState = {
 	verbosity: number
 	extras: any[]
 	extras_verbosity: number
-	formatter: (messages: string) => string
-	before: () => void
-	after: () => void
+	formatter(messages: string): string
+	before(): void
+	after(): void
 	case: CaseType
 	[key: string]: any
 }
@@ -81,20 +81,20 @@ export type OutStyle = {
 }
 
 export interface OutStyles {
-	log: (...messages: any) => void
-	info: (...messages: any) => void
-	silly: (...messages: any) => void
-	trace: (...messages: any) => void
-	warn: (...messages: any) => void
-	debug: (...messages: any) => void
-	verbose: (...messages: any) => void
-	notice: (...messages: any) => void
-	exception: (...messages: any) => void
-	error: (...messages: any) => void
-	throw: (...messages: any) => void
-	fatal: (...messages: any) => void
-	success: (...messages: any) => void
-	done: (...messages: any) => void
+	log(...messages: any): void
+	info(...messages: any): void
+	silly(...messages: any): void
+	trace(...messages: any): void
+	warn(...messages: any): void
+	debug(...messages: any): void
+	verbose(...messages: any): void
+	notice(...messages: any): void
+	exception(...messages: any): void
+	error(...messages: any): void
+	throw(...messages: any): void
+	fatal(...messages: any): void
+	success(...messages: any): void
+	done(...messages: any): void
 }
 
 export const styles: Record<string, OutStyle> = {
