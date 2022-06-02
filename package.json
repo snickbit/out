@@ -31,25 +31,25 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@snickbit/ansi": "latest",
-		"@snickbit/cycle": "^0.0.23",
-		"@snickbit/utilities": "^3.0.23",
+		"@snickbit/ansi": "workspace:latest",
+		"@snickbit/cycle": "workspace:^0.0.23",
+		"@snickbit/utilities": "workspace:^3.0.23",
 		"ansi-styles-template": "^1.0.0",
 		"browser-or-node": "^2.0.0",
 		"node-inspect-extracted": "^1.1.0",
 		"picomatch-browser": "^2.2.6"
 	},
 	"devDependencies": {
-		"@types/jest": "^27.4.1",
-		"@types/node": "^17.0.31",
+		"@types/jest": "^27.5.2",
+		"@types/node": "^17.0.38",
 		"jest": "^28.1.0",
 		"shx": "^0.3.4",
 		"ts-jest": "^28.0.3",
 		"tsup": "^6.0.1",
-		"typedoc": "^0.22.15",
-		"typedoc-plugin-markdown": "^3.12.0",
+		"typedoc": "^0.22.17",
+		"typedoc-plugin-markdown": "^3.12.1",
 		"typedoc-plugin-no-inherit": "^1.3.1",
-		"typescript": "^4.6.4"
+		"typescript": "^4.7.2"
 	},
 	"engines": {
 		"node": ">= 12"
