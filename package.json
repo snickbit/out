@@ -31,7 +31,7 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@snickbit/ansi": "workspace:latest",
+		"@snickbit/ansi": "latest",
 		"@snickbit/cycle": "^0.0.24",
 		"@snickbit/utilities": "^3.0.24",
 		"ansi-styles-template": "^1.0.0",
