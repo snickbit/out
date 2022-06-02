@@ -1,5 +1,12 @@
 # @snickbit/out
 
+## 2.0.30
+
+### Patch Changes
+
+- [baadcfb](https://github.com/snickbit/out/commit/baadcfb) **chore**:  update dependencies
+- [56501b9](https://github.com/snickbit/out/commit/56501b9) **style**:  lint
+
 ## 2.0.27
 
 ### Patch Changes
