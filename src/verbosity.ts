@@ -1,11 +1,9 @@
-import {parse} from '@snickbit/utilities'
 import {isBrowser, isNode} from 'browser-or-node'
 import picomatch from 'picomatch-browser'
 
 const verbosity = {
 	global: null,
 	apps: {},
-	arg: null,
 	checked: false
 }
 
@@ -16,52 +14,82 @@ const verbosity = {
  */
 export const isVerbose = (level = 1): boolean => getVerbosity() >= level
 
-export function getArgVerbosity() {
-	let arg_verbosity
-	if (isNode) {
-		if (process.argv.length > 0) {
-			const verbose_args = process.argv.filter(arg => arg.startsWith('--verbose=') || arg.startsWith('-v') || arg.startsWith('--vo='))
-			if (verbose_args.length > 0) {
-				arg_verbosity = verbose_args.reduce((acc, arg) => {
-					if (arg.startsWith('--verbose=')) {
-						const [, value] = arg.split('=')
-						return parseInt(value)
-					} else if (arg.startsWith('--vo=')) {
-						const [, def] = arg.split('=')
-						const [app, value] = def.split(':')
-						verbosity.apps[app] = parseInt(value)
-						return acc
-					} else if (arg.startsWith('-v')) {
-						return acc + (arg.match(/v/g) || []).length
+const FLAG_REGEX = /(?<flag>-v+|--verbose|--verbosity|--out)/
+const ENV_REGEX = /(?<flag>verbose|verbosity|out)/
+const APP_REGEX = /(:(?<app>[^=:]+))/
+const LEVEL_REGEX = /(=(?<level>\d+))/
+
+interface MatchedArgs {
+	[key: number]: string
+	groups: {
+		flag?: string
+		app?: string
+		level?: string
+	}
+	index: number
+	input: string
+}
+
+export function getEnvVerbosity(env: Record<string, string> | string[]) {
+	if (env) {
+		const is_object = !Array.isArray(env)
+
+		for (const key in env) {
+			const arg = is_object ? `${key}=${env[key]}` : env[key]
+			const reg =	is_object
+				? new RegExp(`^(${ENV_REGEX.source})`)
+				: new RegExp(`^(${FLAG_REGEX.source})`)
+
+			if (reg.test(arg)) {
+				const groupReg = new RegExp(`^${is_object ? ENV_REGEX.source : FLAG_REGEX.source}${APP_REGEX.source}?${LEVEL_REGEX.source}?$`, 'gmi')
+				const parsedArgs = Array.from<MatchedArgs>(arg.matchAll(groupReg))
+
+				if (parsedArgs && parsedArgs.length) {
+					for (let parsedArg of parsedArgs) {
+						const {flag, app, level} = parsedArg.groups
+
+						let parsedLevel: number
+						let increment = false
+						if (flag.startsWith('-v')) {
+							parsedLevel = flag.length - 1
+							increment = parsedLevel === 1
+						} else {
+							parsedLevel = level ? parseInt(level) : 1
+						}
+
+						if (app) {
+							verbosity.apps[app] = increment ? (verbosity.apps[app] || 0) + parsedLevel : parsedLevel
+						}
+
+						if (!app && flag !== '--out' || app === '*') {
+							verbosity.global = increment ? (verbosity.global || 0) + parsedLevel : parsedLevel
+						}
 					}
-					return acc + 1
-				}, 0)
+				}
 			}
 		}
 	}
-	return arg_verbosity
 }
 
 export function processVerbosity() {
 	let process_verbosity, app_values
-	if (isNode) {
-		process_verbosity = process.env.VERBOSITY || process.env.VERBOSE
-		verbosity.arg = getArgVerbosity()
-		app_values = process.env.OUT
-	} else if (isBrowser) {
-		process_verbosity = window.localStorage.getItem('verbosity') || window.localStorage.getItem('verbose')
-		app_values = window.localStorage.getItem('out') || window.localStorage.getItem('OUT')
-	}
+	verbosity.global = 0
 
-	if (app_values) {
-		const apps = app_values.split(',')
-		for (const app of apps) {
-			const [name, level] = app.split(':')
-			verbosity.apps[name] = Math.max(verbosity.apps[name] ?? 0, parse(level))
+	if (isNode) {
+		getEnvVerbosity(process.env)
+		getEnvVerbosity(process.argv)
+	} else if (isBrowser) {
+		const store: any = {}
+		const reg = new RegExp(`^(${ENV_REGEX.source})`)
+		for (let i = 0; i < localStorage.length; i++) {
+			const key = localStorage.key(i)
+			if (reg.test(key)) {
+				store[key] = localStorage.getItem(key)
+			}
 		}
-	}
-	if (process_verbosity) {
-		verbosity.global = parse(process_verbosity) || 0
+		if (Object.keys(store).length) {
+			getEnvVerbosity(store)
+		}
 	}
 
 	verbosity.checked = true
