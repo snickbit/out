@@ -72,7 +72,6 @@ export function getEnvVerbosity(env: Record<string, string> | string[]) {
 }
 
 export function processVerbosity() {
-	let process_verbosity, app_values
 	verbosity.global = 0
 
 	if (isNode) {
