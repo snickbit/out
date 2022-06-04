@@ -1,5 +1,13 @@
 # @snickbit/out
 
+## 2.0.33
+
+### Patch Changes
+
+- [0582010](https://github.com/snickbit/out/commit/0582010) **docs**:  update
+- [40b30cc](https://github.com/snickbit/out/commit/40b30cc) **fix**:  useless vars
+- [01e20fc](https://github.com/snickbit/out/commit/01e20fc) **fix**:  verbosity parsing
+
 ## 2.0.30
 
 ### Patch Changes
