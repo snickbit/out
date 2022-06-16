@@ -1,5 +1,13 @@
 # @snickbit/out
 
+## 2.0.34
+
+### Patch Changes
+
+- [67df006](https://github.com/snickbit/out/commit/67df006) **chore**:  bump dependencies
+- [d4af22d](https://github.com/snickbit/out/commit/d4af22d) **chore**:  bump dependencies
+- [0935b46](https://github.com/snickbit/out/commit/0935b46) **chore**:  bump deps
+
 ## 2.0.33
 
 ### Patch Changes
