@@ -420,7 +420,7 @@ export class Out extends Function {
 				_console.log('\n')
 			} else if (this.state.block || messages.heading) {
 				if (messages.heading) {
-					_console.log(colorize.color(centerText(`${template(`{bold}${messages.heading}`)}{/bold}`, '-')))
+					_console.log(colorize.color(centerText(`${template(`{bold}${messages.heading}{/bold}`)}`, '-')))
 				} else {
 					_console.log(colorize.color(horizontalLine('-', messages.length)))
 				}
