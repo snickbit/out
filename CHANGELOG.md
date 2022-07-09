@@ -1,5 +1,11 @@
 # @snickbit/out
 
+## 2.0.36
+
+### Patch Changes
+
+- [da0c180](https://github.com/snickbit/out/commit/da0c180) **fix**:  move bold ending statement inside template method
+
 ## 2.0.34
 
 ### Patch Changes
