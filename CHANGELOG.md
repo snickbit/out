@@ -1,5 +1,11 @@
 # @snickbit/out
 
+## 2.0.37
+
+### Patch Changes
+
+- [2d7722f](https://github.com/snickbit/out/commit/2d7722f) **fix**:  variable validation
+
 ## 2.0.36
 
 ### Patch Changes
