@@ -1,5 +1,5 @@
 import {ansiStyles, stripAnsi} from '@snickbit/ansi'
-import {isCallable, isFunction, isNumber, isObject, isPrimitive, isString, isType} from '@snickbit/utilities'
+import {isBoolean, isCallable, isFunction, isNumber, isObject, isPrimitive, isString} from '@snickbit/utilities'
 import {template} from 'ansi-styles-template'
 import {isBrowser, isNode} from 'browser-or-node'
 import {inspect} from 'node-inspect-extracted'
@@ -657,10 +657,10 @@ export class Out extends Function {
 	_(arg?: boolean | string) {
 		let exit = false,
 			message = ''
-		if (isType(arg, 'boolean')) {
-			exit = arg as boolean
+		if (isBoolean(arg)) {
+			exit = arg
 		} else if (isString(arg)) {
-			message = arg as string
+			message = arg
 		}
 
 		_console.log(inspect({
